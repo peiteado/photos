@@ -2,10 +2,57 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Mi Portafolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luis Peiteado - Portfolio</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Hola, soy [Tu Nombre]</h1>
-  <p>Bienvenido a mi portafolio.</p>
+  <header>
+    <h1>Luis Peiteado</h1>
+    <p>Portfolio de Luis Peiteado</p>
+  </header>
+
+  <section class="about">
+    <h2>Sobre mí</h2>
+    <p>
+      Bienvenido a mi portfolio. Aquí podrás encontrar una selección de mis trabajos, proyectos y experiencias profesionales en desarrollo y diseño web.
+    </p>
+  </section>
+
+  <section class="projects">
+    <h2>Proyectos</h2>
+
+    <div class="gallery">
+      <img src="images/proyecto1.jpg" alt="Proyecto 1" onclick="openModal(this)">
+      <img src="images/proyecto2.jpg" alt="Proyecto 2" onclick="openModal(this)">
+    </div>
+  </section>
+
+  <footer>
+    <p>Contacto: <a href="mailto:luis@peiteado.com">luis@peiteado.com</a></p>
+    <div class="social">
+      <a href="#">LinkedIn</a> |
+      <a href="#">GitHub</a> |
+      <a href="https://instagram.com/peiteado" target="_blank">@peiteado</a>
+    </div>
+  </footer>
+
+  <!-- Modal para ampliar imagen -->
+  <div id="modal" class="modal" onclick="closeModal()">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modal-img">
+  </div>
+
+  <script>
+    function openModal(img) {
+      const modal = document.getElementById('modal');
+      const modalImg = document.getElementById('modal-img');
+      modal.style.display = 'block';
+      modalImg.src = img.src;
+    }
+    function closeModal() {
+      document.getElementById('modal').style.display = 'none';
+    }
+  </script>
 </body>
 </html>
